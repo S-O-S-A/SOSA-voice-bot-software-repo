@@ -1,5 +1,7 @@
 import ddg3
 
-r = ddg3.query("chief keef")
 
-print(r.related[0].text)
+
+r = ddg3.query(searchQuery)
+
+print(r.abstract.text)
