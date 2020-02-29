@@ -1,6 +1,5 @@
 import json
 
-
 def getCity():
     json_file = open('../setup.json', 'r')
     json_as_string = json_file.read()
