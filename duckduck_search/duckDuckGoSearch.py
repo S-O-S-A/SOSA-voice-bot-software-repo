@@ -10,7 +10,7 @@ def textPrompt(info):
     choice = input("Would you like me to text you this information? Enter 1 or 0")
     if(choice == '1'):
         message = client.messages.create(
-        to="4192979382", 
+        to="6303989409", 
         from_="5203946350",
         body= "Hey, its S.O.S.A with your search info: " + info)
 
@@ -25,14 +25,18 @@ if(r.type == 'disambiguation'):
     
     print(r.related[0].text)
     info = "\n" + r.related[0].text
+    info = info + "\n" + r.related[0].url
     print(r.related[1].text)
-    info = "\n" + r.related[1].text
+    info = info + "\n" + r.related[1].text
+    info = info + "\n" + r.related[1].url
+
     textPrompt(info)
 
 
 elif(r.type == 'answer'):
     print(r.abstract.text)
     info = "\n" + r.abstract.text
+    info = info + "\n" + r.abstract.url
     textPrompt(info)
 elif(r.type == 'nothing'):
     print("Here are some results related to your search:")
