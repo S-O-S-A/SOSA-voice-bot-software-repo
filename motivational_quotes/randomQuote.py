@@ -18,11 +18,6 @@ transition.append(authors[randomNum] + " once said " "\"" +quotes[randomNum] + "
 transition.append(authors[randomNum] + " stated " + "\"" +quotes[randomNum] + "\"")
 transition.append("\"" +quotes[randomNum] + "\"" + ", spoken by " + authors[randomNum])
 
-
-
-
-
-
 print(transition[ranFull])
 
    
