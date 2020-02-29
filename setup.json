@@ -1,0 +1,7 @@
+{
+    "first_name": "Keith",
+    "middle_name": "Farrelle",
+    "last_name": "Cozart",
+    "location": {"city": "Columbus", "state": "OH", "zip_code": "43210"},
+    "non_local_access": false
+}
