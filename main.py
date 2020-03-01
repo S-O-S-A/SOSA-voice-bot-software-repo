@@ -9,14 +9,20 @@ import clock_funcs
 import clock_funcs 
 import clock_funcs 
 import weather 
+import numpy as np
 
+def compute_jaccard_similarity_score(x, y):
+    """
+    Jaccard Similarity J (A,B) = | Intersection (A,B) | /
+                                    | Union (A,B) |
+    """
+    intersection_cardinality = len(set(x).intersection(set(y)))
+    union_cardinality = len(set(x).union(set(y)))
+    return intersection_cardinality / float(union_cardinality)
 
 
 command = input("Please enter a command\n")
-
-
-
-
+print(compute_jaccard_similarity_score(command, "motivational quote"))
 
 if ("motivational quote" in command):
     randomQuote.randomQuote()
