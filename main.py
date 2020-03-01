@@ -22,9 +22,12 @@ def compute_jaccard_similarity_score(x, y):
 
 
 command = input("Please enter a command\n")
-print(compute_jaccard_similarity_score(command, "motivational quote"))
+score_motiv = compute_jaccard_similarity_score(command, "motivational quote")
+score_joke = compute_jaccard_similarity_score(command, "say a funny joke")
+score_weather = compute_jaccard_similarity_score(command, "what's the weather")
 
-if ("motivational quote" in command):
+print(score)
+if (score > 0.6):
     randomQuote.randomQuote()
 elif ("joke" in command):
     tell_joke.tell_joke()
