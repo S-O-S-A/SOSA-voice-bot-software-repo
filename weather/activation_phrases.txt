@@ -1,2 +1,5 @@
 what's the weather like today
 what is the weather today
+How is the weather
+Should I wear a coat?
+Do i need an umbrella?

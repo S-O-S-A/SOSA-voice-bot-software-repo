@@ -1,0 +1,3 @@
+Set a timer for seconds
+Set a timer for hour
+Set a timer for minutes
