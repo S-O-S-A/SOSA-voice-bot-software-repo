@@ -1,15 +1,14 @@
 import time
 
 import sys
-sys.path.append('../')
-from motivational_quotes import randomQuote
+#sys.path.append('../')
+#from motivational_quotes import randomQuote
+import motivational_quotes.randomQuote as randomQuote
 from quick_commands.jokes import tell_joke
 import clock_funcs
 import clock_funcs 
 import clock_funcs 
 import weather 
-
-
 
 
 command = input("Please enter a command\n")

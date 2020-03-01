@@ -2,11 +2,16 @@ import csv
 from random import seed
 from random import randint
 import time
+import os
+
 
 def tell_joke():
+    file_to_reference = "jokes.csv"
+    real_path = os.path.join(os.path.dirname(__file__),file_to_reference)
+
     jokes = []
     punchlines = []
-    with open('/Users/revan/Documents/SOSA-voice-bot-software-repo/quick_commands/jokes/jokes.csv') as csv_file:   
+    with open(real_path) as csv_file:   
         csv_reader = csv.reader(csv_file, delimiter=',') 
         for row in csv_reader:
             jokes.append(row[0])

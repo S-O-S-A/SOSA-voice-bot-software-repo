@@ -1,4 +1,5 @@
 pip3 install ddg3
-pip install pytemperature
-pip install twilio
-pip install spotipy
+pip3 install pytemperature
+pip3 install twilio
+pip3 install spotipy
+pip3 install Path
