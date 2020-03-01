@@ -26,10 +26,9 @@ score_motiv = compute_jaccard_similarity_score(command, "motivational quote")
 score_joke = compute_jaccard_similarity_score(command, "say a funny joke")
 score_weather = compute_jaccard_similarity_score(command, "what's the weather")
 
-print(score)
-if (score > 0.6):
+if (score_motiv >= 0.6):
     randomQuote.randomQuote()
-elif ("joke" in command):
+elif (score_joke >= 0.6):
     tell_joke.tell_joke()
 else:
     print("I didn't quite get that")
