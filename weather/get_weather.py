@@ -5,7 +5,7 @@
 # import required modules 
 import requests, json 
 import pytemperature
-import meta_data
+from weather import meta_data
 
 # Enter your API key here 
 api_key = "d3a6d162b370e498c0bbd193a41c7b7b"

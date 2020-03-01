@@ -4,9 +4,11 @@ import sys
 #sys.path.append('../')
 #from motivational_quotes import randomQuote
 import motivational_quotes.randomQuote as randomQuote
-import quick_commands.jokes as tell_joke
+import quick_commands.jokes.tell_joke as tell_joke
+import quick_commands.stories.tell_stories as tell_story
 import clock_funcs.dayInfo as dayInfo
 import duckduck_search.duckDuckGoSearch as ddgSearch
+import weather.get_weather as get_weather
 
 import numpy as np
 
@@ -36,16 +38,26 @@ def maxSim(action_phrases):
 
 command = input("Please enter a command\n")
 score_motiv = maxSim(randomQuote.activationPhrases())
-#score_joke = maxSim(tell_joke.tell_joke.activationPhrases())
+score_joke = maxSim(tell_joke.activationPhrases())
+score_story = maxSim(tell_story.activationPhrases())
+
 score_dayInfo = maxSim(dayInfo.activationPhrases())
-score_search = -1
+score_search = maxSim(ddgSearch.activationPhrases())
+score_weather = maxSim(get_weather.activationPhrases())
+
 
 if score_search == -1:
     ddgSearch.ddgSearch(command[10:])
-elif (score_motiv >= 0.6):
+elif (score_weather >= 0.7):
+    get_weather.weather()
+elif (score_motiv >= 0.7):
     randomQuote.randomQuote()
-elif (score_dayInfo >= 0.6):
-    dayInfo.dayInfo()    
+elif(score_story >= 0.7):
+    tell_story.tell_story()
+elif (score_joke >= 0.7):
+    tell_joke.tell_joke()
+elif (score_dayInfo >= 0.8):
+    dayInfo.dayInfo()  
 else:
     print("I didn't quite get that")
     

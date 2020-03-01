@@ -22,6 +22,9 @@ dirList = glob.glob(path)
 # for file in dirs:
 #    print (file)
 
+
+activations_phrase_list = []
+
 def findFileInfo(current_path):
     for filename in os.listdir(current_path):
         if filename=="activation_phrases.txt": 
