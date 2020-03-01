@@ -11,7 +11,12 @@ import clock_funcs
 import weather 
 
 
+
 command = input("Please enter a command\n")
+
+
+
+
 
 if ("motivational quote" in command):
     randomQuote.randomQuote()
