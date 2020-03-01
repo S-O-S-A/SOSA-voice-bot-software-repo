@@ -25,5 +25,13 @@ def tell_story():
     time.sleep(1)
     print(story)
 
+def activationPhrases():
+    act = []
+
+    act.append("tell me a story")
+    act.append("what's a good story")
+
+    return act
+
    
     

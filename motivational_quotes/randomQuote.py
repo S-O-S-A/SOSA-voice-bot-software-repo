@@ -24,5 +24,17 @@ def randomQuote():
 
     print(transition[ranFull])
 
-   
+def activationPhrases():
+    act = []
+
+    
+    act.append("what's a motivational quote")
+    act.append("inspire me")
+    act.append("I need something motivational")
+    act.append("I need something inspirational")
+    act.append("I need  to hear something motivational")
+    act.append("What's a good quote")
+    act.append("Give me a quote")
+
+    return act
     

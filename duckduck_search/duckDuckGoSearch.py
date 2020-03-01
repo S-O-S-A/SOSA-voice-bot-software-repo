@@ -14,33 +14,43 @@ def textPrompt(info):
         from_="5203946350",
         body= "Hey, its S.O.S.A with your search info: " + info)
 
-searchQuery = input()
+def ddgSearch(searchQuery):
 
-r = ddg3.query(searchQuery)
-print(r.type)
+    r = ddg3.query(searchQuery)
+    print(r.type)
 
 
-if(r.type == 'disambiguation'):
-    print("Here are the first couple results related to what you said:")
+    if(r.type == 'disambiguation'):
+        print("Here are the first couple results related to what you said:")
+        
+        print(r.related[0].text)
+        info = "\n" + r.related[0].text
+        info = info + "\n" + r.related[0].url
+        print(r.related[1].text)
+        info = info + "\n" + r.related[1].text
+        info = info + "\n" + r.related[1].url
+
+        textPrompt(info)
+
+
+    elif(r.type == 'answer'):
+        print(r.abstract.text)
+        info = "\n" + r.abstract.text
+        info = info + "\n" + r.abstract.url
+        textPrompt(info)
+    elif(r.type == 'nothing'):
+        print("Here are some results related to your search:")
+        print(r.related)
+        info = "\n" + r.related
+        textPrompt(info)
+
+def activationPhrases():
+    act = []
+
     
-    print(r.related[0].text)
-    info = "\n" + r.related[0].text
-    info = info + "\n" + r.related[0].url
-    print(r.related[1].text)
-    info = info + "\n" + r.related[1].text
-    info = info + "\n" + r.related[1].url
+    act.append("Search for")
+    
+    
 
-    textPrompt(info)
-
-
-elif(r.type == 'answer'):
-    print(r.abstract.text)
-    info = "\n" + r.abstract.text
-    info = info + "\n" + r.abstract.url
-    textPrompt(info)
-elif(r.type == 'nothing'):
-    print("Here are some results related to your search:")
-    print(r.related)
-    info = "\n" + r.related
-    textPrompt(info)
-
+    return act
+    

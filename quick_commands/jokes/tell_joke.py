@@ -26,5 +26,15 @@ def tell_joke():
     time.sleep(2)
     print(punchline)
 
+def activationPhrases():
+    act = []
+
+    act.append("tell me a joke")
+    act.append("what's a joke")
+    act.append("say something funny")
+    act.append("what's a funny joke")
+    act.append("make me laugh")
+
+    return act
    
     
